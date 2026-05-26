@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tennis Pro Bahia | Assessoria esportiva, eventos e posicionamento de marca</title>
-  <meta name="description" content="A Tennis Pro Bahia é uma agência de assessoria esportiva especializada em posicionamento de marca, gestão de projetos, produção de eventos e conteúdo de alta performance para o esporte." />
+  <title>Pro Sports | Assessoria esportiva premium</title>
+  <meta name="description" content="Pro Sports: assessoria esportiva, posicionamento de marca, eventos e conexões estratégicas com visual premium." />
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0d1b2d;
-      --card: rgba(255,255,255,0.08);
-      --card-strong: rgba(255,255,255,0.12);
-      --line: rgba(255,255,255,0.12);
-      --text: #f7f8fb;
-      --muted: #b9c3d5;
-      --blue: #4da3ff;
-      --cyan: #6be8ff;
-      --gold: #f2b84b;
-      --green: #6df2b2;
-      --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
-      --radius-lg: 30px;
-      --radius-md: 22px;
+      --bg: #030303;
+      --bg-2: #0b0f18;
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-strong: rgba(255, 255, 255, 0.12);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f8fbff;
+      --muted: #b9c4d6;
+      --silver-dark: #8f8f8f;
+      --silver: #cfcfcf;
+      --silver-soft: #e7e7e7;
+      
+      
+      --white: #ffffff;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 20px;
       --max: 1180px;
     }
 
@@ -31,143 +34,184 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(77,163,255,0.18), transparent 32%),
-        radial-gradient(circle at top right, rgba(109,242,178,0.12), transparent 25%),
-        linear-gradient(180deg, #07111f 0%, #091829 45%, #07111f 100%);
+        radial-gradient(circle at 12% 18%, rgba(180, 180, 180, 0.18), transparent 24%),
+        radial-gradient(circle at 85% 15%, rgba(120, 120, 120, 0.18), transparent 22%),
+        radial-gradient(circle at 50% 55%, rgba(255,255,255,0.05), transparent 32%),
+        linear-gradient(180deg, #050505 0%, #0b1019 50%, #040404 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      border-radius: 50%;
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.55;
+    }
+
+    body::before {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      top: 22%;
+      background: rgba(170, 170, 170, 0.22);
+      animation: floatGlow 12s ease-in-out infinite;
+    }
+
+    body::after {
+      width: 220px;
+      height: 220px;
+      right: -40px;
+      top: 8%;
+      background: rgba(120, 120, 120, 0.22);
+      animation: floatGlow 14s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, 18px, 0) scale(1.08); }
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
-    .section { padding: 88px 0; }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; position: relative; z-index: 1; }
+    .section { padding: 86px 0; }
     .section-title {
-      font-size: clamp(2rem, 4vw, 3.8rem);
-      line-height: 0.98;
-      margin: 0 0 18px;
-      letter-spacing: -0.04em;
+      margin: 0 0 14px;
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 760px;
     }
     .section-text {
+      margin: 0;
+      max-width: 650px;
       color: var(--muted);
-      font-size: 1.08rem;
       line-height: 1.75;
-      max-width: 720px;
+      font-size: 1.02rem;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       backdrop-filter: blur(18px);
-      background: rgba(7, 17, 31, 0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(3, 3, 3, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
     .brand {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      gap: 14px;
     }
 
-    .brand-mark {
-      font-size: 0.78rem;
+    .brand-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      padding: 6px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.3);
+    }
+
+    .brand-copy small,
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: var(--cyan);
-      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #d8d8d8;
     }
 
-    .brand-name {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+    .brand-copy strong {
+      display: block;
+      font-size: 1.08rem;
+      letter-spacing: -0.03em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
       color: var(--muted);
       font-weight: 600;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
-    .btn,
-    .btn-secondary {
+    .btn, .btn-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 14px 22px;
       border-radius: 999px;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      font-weight: 800;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
     }
 
     .btn {
-      color: #07111f;
-      background: linear-gradient(135deg, var(--gold), #ffd98a);
-      box-shadow: 0 16px 40px rgba(242, 184, 75, 0.25);
+      color: var(--white);
+      background: linear-gradient(135deg, #d8d8d8, #8c8c8c);
+      box-shadow: 0 18px 42px rgba(160, 160, 160, 0.2);
     }
 
     .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
       color: var(--text);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .btn:hover,
-    .btn-secondary:hover { transform: translateY(-2px); }
+    .btn:hover, .btn-secondary:hover, .partner-card:hover, .service:hover, .highlight-card:hover {
+      transform: translateY(-4px);
+    }
 
     .hero {
-      padding: 64px 0 46px;
+      padding: 48px 0 34px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.9fr;
-      gap: 32px;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 26px;
       align-items: stretch;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
       border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      color: var(--cyan);
-      font-weight: 700;
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-card,
-    .panel,
-    .service,
-    .project,
-    .video-card,
-    .contact-card,
-    .quote {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
+    .glass::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(255,255,255,0.05), transparent 42%);
+      pointer-events: none;
     }
 
     .hero-copy {
@@ -175,33 +219,34 @@
     }
 
     .hero h1 {
+      margin: 18px 0 18px;
       font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 0.92;
-      margin: 20px 0 18px;
-      letter-spacing: -0.055em;
+      line-height: .9;
+      letter-spacing: -0.06em;
+      max-width: 10ch;
     }
 
     .hero p {
+      margin: 0;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.8;
-      max-width: 640px;
+      max-width: 58ch;
     }
 
-    .hero-actions,
-    .hero-metrics,
-    .contact-actions {
+    .hero-actions, .metrics, .contact-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
     }
 
-    .hero-actions { margin-top: 30px; }
-    .hero-metrics { margin-top: 34px; }
+    .hero-actions { margin-top: 28px; }
+    .metrics { margin-top: 30px; }
 
     .metric {
-      min-width: 160px;
-      padding: 18px 20px;
+      flex: 1 1 170px;
+      min-width: 0;
+      padding: 18px 18px 16px;
       border-radius: 22px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
@@ -209,347 +254,311 @@
 
     .metric strong {
       display: block;
-      font-size: 1.75rem;
+      font-size: 1.55rem;
       margin-bottom: 6px;
     }
 
     .metric span {
       color: var(--muted);
-      line-height: 1.5;
-      font-size: 0.95rem;
+      line-height: 1.55;
+      font-size: .94rem;
     }
 
-    .hero-visual {
-      position: relative;
-      overflow: hidden;
-      padding: 30px;
+    .hero-side {
+      padding: 28px;
+      display: grid;
+      gap: 18px;
       min-height: 100%;
     }
 
-    .hero-visual::before,
-    .hero-visual::after {
+    .logo-showcase {
+      padding: 24px;
+      border-radius: 28px;
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(255,255,255,0.22), transparent 32%),
+        linear-gradient(145deg, rgba(200,200,200,0.18), rgba(255,255,255,0.04) 50%, rgba(120,120,120,0.14));
+      border: 1px solid rgba(255,255,255,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-showcase::after {
       content: "";
       position: absolute;
+      width: 160px;
+      height: 160px;
+      bottom: -30px;
+      right: -20px;
       border-radius: 50%;
-      filter: blur(30px);
-      opacity: 0.75;
+      background: radial-gradient(circle, rgba(170,170,170,0.26), transparent 70%);
+      filter: blur(20px);
     }
 
-    .hero-visual::before {
-      inset: auto auto -30px -40px;
-      width: 180px;
-      height: 180px;
-      background: rgba(77,163,255,0.35);
-    }
-
-    .hero-visual::after {
-      inset: 10px -20px auto auto;
-      width: 220px;
-      height: 220px;
-      background: rgba(242,184,75,0.22);
-    }
-
-    .visual-stack {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 18px;
-      height: 100%;
-    }
-
-    .visual-main {
-      padding: 28px;
-      border-radius: 26px;
-      background: linear-gradient(145deg, rgba(77,163,255,0.14), rgba(255,255,255,0.05));
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .badge-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-
-    .mini-badge {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      color: var(--text);
+    .hero-note, .feature-strip, .service, .highlight-card, .partner-card, .contact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.045));
       border: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.9rem;
-      font-weight: 600;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
     }
 
-    .visual-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+    .hero-note {
+      padding: 22px;
     }
 
-    .tile {
-      min-height: 160px;
-      border-radius: 24px;
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .tile strong {
+    .hero-note strong,
+    .service strong,
+    .highlight-card strong,
+    .partner-card strong {
       display: block;
+      font-size: 1.05rem;
       margin-bottom: 8px;
-      font-size: 1rem;
-    }
-
-    .tile span {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.94rem;
-    }
-
-    .about-grid,
-    .projects-grid,
-    .contact-grid,
-    .footer-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .about-grid { grid-template-columns: 0.95fr 1.05fr; align-items: center; }
-
-    .panel { padding: 34px; }
-
-    .panel h3,
-    .service h3,
-    .project h3,
-    .video-card h3,
-    .contact-card h3 {
-      margin: 0 0 14px;
-      font-size: 1.35rem;
       letter-spacing: -0.03em;
     }
 
-    .panel p,
+    .hero-note p,
     .service p,
-    .project p,
-    .video-card p,
-    .contact-card p,
-    .quote p {
-      color: var(--muted);
-      line-height: 1.75;
+    .highlight-card p,
+    .partner-card p,
+    .contact-card p {
       margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
-    .signature {
-      display: inline-block;
-      margin-top: 26px;
-      padding: 12px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-weight: 700;
+    .feature-strip {
+      margin-top: 28px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .feature-chip {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .feature-chip span {
+      display: block;
+      color: #d8d8d8;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 10px;
     }
 
     .services-grid,
-    .videos-grid {
+    .highlights-grid,
+    .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
+    }
+
+    .services-grid {
       margin-top: 34px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
     }
 
-    .service,
-    .video-card,
-    .project,
-    .contact-card,
-    .quote {
+    .service, .highlight-card, .contact-card {
       padding: 28px;
+      transition: transform .25s ease, border-color .25s ease;
     }
 
-    .service-icon,
-    .video-icon,
-    .project-tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .service-icon, .highlight-icon {
       width: 52px;
       height: 52px;
-      margin-bottom: 18px;
       border-radius: 16px;
-      background: rgba(255,255,255,0.08);
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      background: linear-gradient(145deg, rgba(212,212,212,0.22), rgba(120,120,120,0.16));
       border: 1px solid rgba(255,255,255,0.08);
-      font-size: 1.4rem;
     }
 
-    .service ul,
-    .project ul,
-    .contact-list {
-      padding: 0;
-      margin: 18px 0 0;
+    .services-grid ul, .contact-list {
       list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
     }
 
-    .service li,
-    .project li,
-    .contact-list li {
-      color: var(--muted);
-      padding-left: 18px;
+    .services-grid li, .contact-list li {
       position: relative;
+      padding-left: 16px;
       margin-bottom: 10px;
-      line-height: 1.6;
+      color: var(--muted);
+      line-height: 1.55;
     }
 
-    .service li::before,
-    .project li::before,
-    .contact-list li::before {
+    .services-grid li::before, .contact-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 11px;
+      top: 10px;
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--gold);
+      background: linear-gradient(135deg, #d8d8d8, #8a8a8a);
     }
 
-    .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 34px; }
-
-    .project-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
+    .partners-wrap {
+      margin-top: 34px;
+      position: relative;
     }
 
-    .project-tag {
-      width: auto;
-      height: auto;
-      margin: 0;
-      padding: 10px 14px;
-      font-size: 0.8rem;
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .video-frame {
-      aspect-ratio: 9 / 16;
-      border-radius: 24px;
-      overflow: hidden;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.48)),
-        radial-gradient(circle at top, rgba(107,232,255,0.25), transparent 38%),
-        linear-gradient(140deg, #11233d, #07111f 70%);
+    .partners-scroller {
       display: grid;
-      place-items: end start;
-      padding: 18px;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(245px, 290px);
+      gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+      padding-bottom: 12px;
     }
 
-    .video-label {
+    .partners-scroller::-webkit-scrollbar { height: 10px; }
+    .partners-scroller::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, rgba(220,220,220,0.85), rgba(120,120,120,0.85));
+      border-radius: 999px;
+    }
+    .partners-scroller::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); border-radius: 999px; }
+
+    .partner-card {
+      scroll-snap-align: start;
+      padding: 24px;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .partner-card:hover, .service:hover, .highlight-card:hover {
+      border-color: rgba(220,220,220,0.35);
+      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.06));
+    }
+
+    .partner-card .handle {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      width: fit-content;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(7, 17, 31, 0.78);
-      border: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.88rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #ececec;
       font-weight: 700;
+      font-size: .92rem;
     }
 
-    .quote {
-      margin-top: 28px;
-      position: relative;
-      overflow: hidden;
+    .partner-card small {
+      color: #d8d8d8;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
     }
 
-    .quote strong {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
+    .highlights-grid {
+      margin-top: 34px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
     }
 
-    .contact-grid { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+    .contact-grid {
+      grid-template-columns: 1.08fr .92fr;
+      align-items: start;
+    }
 
     .contact-card .label {
-      font-size: 0.82rem;
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 700;
-      margin-bottom: 12px;
       display: block;
+      margin-bottom: 8px;
+      color: #d8d8d8;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 800;
     }
 
     .contact-card .value {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 16px;
       display: block;
+      font-size: 1.08rem;
+      margin-bottom: 16px;
+      font-weight: 700;
     }
 
     .footer {
-      padding: 26px 0 48px;
+      padding: 18px 0 42px;
       color: var(--muted);
     }
 
-    .footer-grid {
-      grid-template-columns: 1fr auto;
-      align-items: center;
+    .footer-bar {
       padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .about-grid,
       .contact-grid,
-      .projects-grid,
       .services-grid,
-      .videos-grid {
+      .highlights-grid,
+      .feature-strip {
         grid-template-columns: 1fr;
       }
 
       .nav {
-        padding: 16px 0;
+        padding: 14px 0;
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .hero { padding-top: 34px; }
+      .partners-scroller {
+        grid-auto-columns: minmax(240px, 84vw);
+      }
     }
 
     @media (max-width: 720px) {
-      .container { width: min(calc(100% - 28px), var(--max)); }
-      .section { padding: 64px 0; }
-      .hero-copy,
-      .panel,
-      .service,
-      .project,
-      .video-card,
-      .contact-card,
-      .quote,
-      .hero-visual { padding: 24px; }
-      .visual-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
+      .section { padding: 66px 0; }
+      .hero-copy, .hero-side, .service, .highlight-card, .contact-card { padding: 22px; }
+      .hero h1 { font-size: clamp(2.7rem, 14vw, 4.2rem); }
+      .brand { align-items: flex-start; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">
-        <span class="brand-mark">Assessoria esportiva</span>
-        <a href="#inicio" class="brand-name">Tennis Pro Bahia</a>
-      </div>
+      <a class="brand" href="#inicio" aria-label="Pro Sports">
+        <svg class="brand-badge" viewBox="0 0 120 120" role="img" aria-label="Logo Pro Sports">
+          <defs>
+            <linearGradient id="shieldBlue" x1="0" x2="1">
+              <stop offset="0%" stop-color="#d9d9d9" />
+              <stop offset="100%" stop-color="#9d9d9d" />
+            </linearGradient>
+          </defs>
+          <path d="M60 10 97 24v33c0 24-15 40-37 53C38 97 23 81 23 57V24L60 10Z" fill="url(#shieldBlue)" stroke="#fff" stroke-width="5"/>
+          <path d="M60 21 88 32v25c0 18-11 30-28 41-17-11-28-23-28-41V32L60 21Z" fill="#fff" opacity=".96"/>
+          <path d="M34 71c12 9 39 9 53-20" fill="none" stroke="#7f7f7f" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="50" cy="45" r="10" fill="#d9d9d9"/>
+          <path d="M58 50c9-4 15-12 19-22" fill="none" stroke="#d9d9d9" stroke-width="8" stroke-linecap="round"/>
+          <path d="M39 84h42" stroke="#d9d9d9" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-copy">
+          <small>Assessoria esportiva</small>
+          <strong>Pro Sports</strong>
+        </span>
+      </a>
       <nav class="nav-links">
-        <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="#projetos">Projetos</a>
+        <a href="#parceiras">Parceiras</a>
         <a href="#destaques">Destaques</a>
         <a href="#contato" class="btn-secondary">Fale com a equipe</a>
       </nav>
@@ -559,85 +568,73 @@
   <main>
     <section class="hero" id="inicio">
       <div class="container hero-grid">
-        <article class="hero-card hero-copy">
-          <span class="eyebrow">Estratégia, visibilidade e performance no esporte</span>
-          <h1>Uma presença profissional à altura de grandes projetos esportivos.</h1>
+        <article class="glass hero-copy">
+          <span class="eyebrow">Marca, presença e execução no esporte</span>
+          <h1>Visual forte para projetos que precisam parecer grandes.</h1>
           <p>
-            A Tennis Pro Bahia transforma iniciativas esportivas em marcas fortes, eventos memoráveis e projetos com credibilidade institucional. Criamos posicionamento, comunicação e experiências que conectam atletas, federações, patrocinadores e público com sofisticação, clareza e resultado.
+            A Pro Sports conecta assessoria, eventos e posicionamento com uma presença mais elegante, direta e profissional. Menos excesso de texto, mais impacto visual e confiança desde o primeiro contato.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#contato">Solicitar apresentação comercial</a>
-            <a class="btn-secondary" href="#destaques">Ver destaques das redes</a>
+            <a class="btn" href="#contato">Solicitar apresentação</a>
+            <a class="btn-secondary" href="#parceiras">Ver parceiras</a>
           </div>
-          <div class="hero-metrics">
+          <div class="metrics">
             <div class="metric">
-              <strong>360°</strong>
-              <span>Atuação completa em assessoria, produção, conteúdo e gestão estratégica.</span>
+              <strong>Premium</strong>
+              <span>Estética refinada para valorizar a marca e os projetos.</span>
             </div>
             <div class="metric">
-              <strong>Alta entrega</strong>
-              <span>Execução com padrão visual profissional e foco na valorização do esporte.</span>
+              <strong>Direto</strong>
+              <span>Mensagem enxuta, clara e focada em conversão.</span>
             </div>
             <div class="metric">
-              <strong>Marca forte</strong>
-              <span>Construção de reputação para projetos, atletas, eventos e instituições.</span>
+              <strong>Dinâmico</strong>
+              <span>Movimento, profundidade e contraste para uma navegação viva.</span>
             </div>
           </div>
         </article>
 
-        <aside class="hero-card hero-visual">
-          <div class="visual-stack">
-            <div class="visual-main">
-              <span class="eyebrow">Posicionamento premium</span>
-              <h2 style="margin:18px 0 0;font-size:clamp(1.8rem,4vw,3rem);line-height:1.02;letter-spacing:-0.04em;">Comunicação que eleva o esporte e potencializa oportunidades.</h2>
-              <div class="badge-row">
-                <span class="mini-badge">Branding esportivo</span>
-                <span class="mini-badge">Captação e projetos</span>
-                <span class="mini-badge">Eventos e cobertura</span>
-              </div>
-            </div>
-            <div class="visual-grid">
-              <div class="tile">
-                <strong>Projetos com narrativa sólida</strong>
-                <span>Do conceito à apresentação final, cada entrega transmite valor, seriedade e visão estratégica.</span>
-              </div>
-              <div class="tile">
-                <strong>Conteúdo que gera percepção</strong>
-                <span>Textos, peças e ativações criados para destacar autoridade, impacto e diferenciação.</span>
-              </div>
-            </div>
+        <aside class="glass hero-side">
+          <div class="logo-showcase">
+            <svg viewBox="0 0 420 420" width="100%" style="max-width:320px" role="img" aria-label="Emblema Pro Sports">
+              <defs>
+                <linearGradient id="mainShield" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#d9d9d9" />
+                  <stop offset="100%" stop-color="#9d9d9d" />
+                </linearGradient>
+              </defs>
+              <path d="M210 28 342 76v110c0 86-52 144-132 194C130 330 78 272 78 186V76L210 28Z" fill="url(#mainShield)" stroke="#fff" stroke-width="12"/>
+              <path d="M210 60 311 96v89c0 64-38 109-101 150-63-41-101-86-101-150V96L210 60Z" fill="#fff"/>
+              <circle cx="177" cy="138" r="31" fill="#d9d9d9"/>
+              <circle cx="202" cy="177" r="17" fill="#fff" stroke="#d9d9d9" stroke-width="10"/>
+              <path d="M221 183c42-18 68-55 82-108" fill="none" stroke="#d9d9d9" stroke-width="18" stroke-linecap="round"/>
+              <path d="M135 256c58 29 131 13 172-77" fill="none" stroke="#7f7f7f" stroke-width="22" stroke-linecap="round"/>
+              <path d="M122 223c63 43 157 26 197-80" fill="none" stroke="#d9d9d9" stroke-width="12" stroke-linecap="round" opacity=".9"/>
+              <rect x="106" y="218" width="208" height="56" rx="28" fill="#d9d9d9"/>
+              <text x="210" y="256" text-anchor="middle" font-size="34" font-family="Arial, sans-serif" font-style="italic" font-weight="800" fill="#fff">PRO</text>
+              <text x="210" y="293" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" font-weight="800" fill="#d9d9d9">SPORTS</text>
+            </svg>
+          </div>
+          <div class="hero-note">
+            <strong>Presença que transmite autoridade</strong>
+            <p>Base preta com degradês em cinza, profundidade 3D e blocos desenhados para parecer mais institucionais.</p>
           </div>
         </aside>
       </div>
-    </section>
 
-    <section class="section" id="sobre">
-      <div class="container about-grid">
-        <div class="panel">
-          <span class="eyebrow">Sobre a agência</span>
-          <h2 class="section-title">Estratégia esportiva com visão institucional, criativa e comercial.</h2>
-          <p>
-            A Tennis Pro Bahia nasce para estruturar e impulsionar o ecossistema esportivo com profissionalismo. Atuamos na construção de marcas, na organização de projetos, na produção de eventos e na comunicação de iniciativas que precisam ser percebidas com autoridade.
-          </p>
-          <p style="margin-top:18px;">
-            Nosso trabalho combina planejamento, sensibilidade de mercado e excelência estética para posicionar atletas, federações, organizadores e parceiros em um novo patamar de apresentação. Mais do que divulgar, nós desenhamos experiências e mensagens que fortalecem reputação, ampliam alcance e abrem portas para novas oportunidades.
-          </p>
-          <span class="signature">Tennis Pro Bahia · Assessoria esportiva com padrão premium</span>
-        </div>
-        <div class="panel">
-          <h3>O que nos diferencia</h3>
-          <ul class="contact-list">
-            <li>Visão estratégica para transformar ações esportivas em ativos de marca.</li>
-            <li>Copywriting profissional para apresentações, redes sociais e materiais institucionais.</li>
-            <li>Organização de projetos com foco em clareza, credibilidade e execução impecável.</li>
-            <li>Direção visual elegante para elevar a percepção de valor da agência e de seus clientes.</li>
-            <li>Capacidade de integrar conteúdo, cobertura, produção e relacionamento em uma mesma operação.</li>
-          </ul>
-          <div class="quote">
-            <strong>Nosso compromisso</strong>
-            <p>
-              Entregar uma presença digital à altura da qualidade dos projetos desenvolvidos pela Tennis Pro Bahia, com linguagem refinada, estética consistente e comunicação preparada para gerar confiança desde o primeiro contato.
-            </p>
+      <div class="container">
+        <div class="feature-strip">
+          <div class="feature-chip">
+            <span>Branding</span>
+            Comunicação mais limpa e mais forte visualmente.
+          </div>
+          <div class="feature-chip">
+            <span>Eventos</span>
+            Estrutura pensada para mostrar organização e impacto.
+          </div>
+          <div class="feature-chip">
+            <span>Relacionamento</span>
+            Área de parceiras em formato rolável, clicável e moderna.
           </div>
         </div>
       </div>
@@ -645,220 +642,167 @@
 
     <section class="section" id="servicos">
       <div class="container">
-        <span class="eyebrow">Serviços estratégicos</span>
-        <h2 class="section-title">Soluções completas para marcas, atletas, eventos e projetos esportivos.</h2>
+        <span class="eyebrow">Soluções principais</span>
+        <h2 class="section-title">O essencial, apresentado com mais valor percebido.</h2>
         <p class="section-text">
-          Cada serviço foi apresentado com uma copy mais madura e profissional, focada em comunicar valor real, credibilidade e resultado. A proposta é mostrar a Tennis Pro Bahia como uma agência preparada para operar em alto nível e representar o esporte com elegância.
+          Reorganizamos a experiência para destacar o que importa: posicionamento, produção e visibilidade para o esporte.
         </p>
 
         <div class="services-grid">
           <article class="service">
-            <div class="service-icon">🏅</div>
-            <h3>Branding e posicionamento de marca</h3>
-            <p>Construção de identidade, narrativa institucional e presença estratégica para projetos esportivos que desejam ser lembrados pela força da sua imagem.</p>
-            <ul>
-              <li>Diagnóstico de marca e percepção.</li>
-              <li>Tom de voz e mensagem central.</li>
-              <li>Apresentações profissionais e materiais institucionais.</li>
-            </ul>
-          </article>
-
-          <article class="service">
-            <div class="service-icon">✍️</div>
-            <h3>Criação de conteúdo e copywriting</h3>
-            <p>Produção de textos, legendas, roteiros e páginas com linguagem refinada para comunicar autoridade, conexão e propósito nas redes e nos canais oficiais.</p>
-            <ul>
-              <li>Textos para site, bio e apresentações.</li>
-              <li>Roteiros para vídeos e coberturas.</li>
-              <li>Conteúdo orientado para percepção de valor.</li>
-            </ul>
-          </article>
-
-          <article class="service">
-            <div class="service-icon">📊</div>
-            <h3>Gestão de projetos esportivos</h3>
-            <p>Estruturação de projetos com visão técnica e estratégica, conectando planejamento, parceiros, execução e comunicação para iniciativas sustentáveis.</p>
-            <ul>
-              <li>Organização de escopo e entregas.</li>
-              <li>Apresentação para patrocinadores e instituições.</li>
-              <li>Coordenação da comunicação do projeto.</li>
-            </ul>
-          </article>
-
-          <article class="service">
             <div class="service-icon">🎾</div>
-            <h3>Assessoria esportiva especializada</h3>
-            <p>Acompanhamento de atletas, entidades e ações esportivas com foco em imagem, reputação, relacionamento e crescimento de presença no mercado.</p>
+            <strong>Assessoria esportiva</strong>
+            <p>Presença mais profissional para atletas, projetos, federações e ações esportivas.</p>
             <ul>
-              <li>Planejamento de imagem e comunicação.</li>
-              <li>Direcionamento para oportunidades de marca.</li>
-              <li>Alinhamento institucional e comercial.</li>
+              <li>Imagem e posicionamento.</li>
+              <li>Comunicação institucional.</li>
+              <li>Apoio em relacionamento.</li>
             </ul>
           </article>
 
           <article class="service">
             <div class="service-icon">🎥</div>
-            <h3>Produção audiovisual e cobertura</h3>
-            <p>Captação e curadoria de materiais que valorizam eventos, bastidores e resultados, convertendo momentos em ativos de comunicação para redes sociais e portfólio.</p>
+            <strong>Eventos e conteúdo</strong>
+            <p>Cobertura, bastidores e materiais visuais para gerar prova social e autoridade.</p>
             <ul>
-              <li>Vídeos curtos para redes sociais.</li>
-              <li>Cobertura de eventos e ativações.</li>
-              <li>Conteúdo de impacto para destaque digital.</li>
+              <li>Captação de momentos-chave.</li>
+              <li>Conteúdo para redes.</li>
+              <li>Entrega visual de alto padrão.</li>
             </ul>
           </article>
 
           <article class="service">
-            <div class="service-icon">🏟️</div>
-            <h3>Produção e execução de eventos</h3>
-            <p>Planejamento e entrega de experiências esportivas com atenção ao detalhe, à organização e à percepção premium do público, parceiros e patrocinadores.</p>
+            <div class="service-icon">📈</div>
+            <strong>Projetos e marca</strong>
+            <p>Estruturação de apresentações, narrativa e percepção premium para novas oportunidades.</p>
             <ul>
-              <li>Eventos proprietários e iniciativas especiais.</li>
-              <li>Experiência de marca no local.</li>
-              <li>Comunicação antes, durante e depois do evento.</li>
+              <li>Materiais institucionais.</li>
+              <li>Clareza comercial.</li>
+              <li>Posicionamento com contraste.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projetos">
+    <section class="section" id="parceiras">
       <div class="container">
-        <span class="eyebrow">Projetos e frentes de atuação</span>
-        <h2 class="section-title">Apresentação clara das entregas que fortalecem a presença da agência.</h2>
+        <span class="eyebrow">Parceiras que confiam na gente</span>
+        <h2 class="section-title">Perfis em destaque em uma aba horizontal, rolável e clicável.</h2>
         <p class="section-text">
-          A seção abaixo substitui textos soltos por uma narrativa mais convincente, mostrando como a agência contribui para cada tipo de projeto com organização, prestígio e impacto de comunicação.
+          A navegação abaixo funciona como vitrine de confiança: intuitiva no celular, elegante no desktop e pronta para levar o usuário direto aos perfis parceiros.
         </p>
 
-        <div class="projects-grid">
-          <article class="project">
-            <div class="project-header">
-              <h3>Cobertura de eventos esportivos</h3>
-              <span class="project-tag">Visibilidade</span>
-            </div>
-            <p>
-              Transformamos eventos em vitrines de reputação. A cobertura estratégica da Tennis Pro Bahia registra o ambiente, valoriza os participantes, reforça a imagem institucional e cria conteúdo com estética profissional para redes sociais, parceiros e arquivos oficiais.
-            </p>
-            <ul>
-              <li>Destaque para federações, atletas, patrocinadores e público.</li>
-              <li>Conteúdo pensado para gerar autoridade e recorrência digital.</li>
-              <li>Entrega de materiais com narrativa consistente e visual elegante.</li>
-            </ul>
-          </article>
+        <div class="partners-wrap">
+          <div class="partners-scroller" aria-label="Perfis parceiros da Pro Sports">
+            <a class="partner-card" href="https://www.instagram.com/br_team_oficial/" target="_blank" rel="noreferrer">
+              <small>Parceira oficial</small>
+              <div>
+                <strong>BR Team Oficial</strong>
+                <p>Perfil parceiro em destaque para reforçar conexão e credibilidade no ecossistema esportivo.</p>
+              </div>
+              <span class="handle">@br_team_oficial</span>
+            </a>
 
-          <article class="project">
-            <div class="project-header">
-              <h3>Produção de eventos</h3>
-              <span class="project-tag">Experiência</span>
-            </div>
-            <p>
-              Da concepção à execução, produzimos eventos com planejamento, imagem coordenada e percepção profissional. O objetivo é fazer com que cada projeto seja lembrado não apenas pela realização, mas pela qualidade da experiência entregue.
-            </p>
-            <ul>
-              <li>Festivais, abertos, ativações e ações especiais.</li>
-              <li>Integração entre operação, comunicação e valorização de marca.</li>
-              <li>Foco em resultado institucional, comercial e visual.</li>
-            </ul>
-          </article>
+            <a class="partner-card" href="https://www.instagram.com/ftmba.oficial/" target="_blank" rel="noreferrer">
+              <small>Federação</small>
+              <div>
+                <strong>FTMBA</strong>
+                <p>Janela rápida para uma parceira institucional importante dentro da navegação principal.</p>
+              </div>
+              <span class="handle">@ftmba.oficial</span>
+            </a>
 
-          <article class="project">
-            <div class="project-header">
-              <h3>Gestão de projetos e captação</h3>
-              <span class="project-tag">Estrutura</span>
-            </div>
-            <p>
-              Organizamos ideias com clareza estratégica, transformando propostas em projetos sólidos e apresentáveis. A agência atua na estruturação do discurso, no desenho da proposta de valor e no fortalecimento da credibilidade para parceiros e apoiadores.
-            </p>
-            <ul>
-              <li>Projetos com narrativa mais profissional e objetiva.</li>
-              <li>Materiais que comunicam viabilidade, propósito e impacto.</li>
-              <li>Posicionamento que facilita relacionamento institucional.</li>
-            </ul>
-          </article>
+            <a class="partner-card" href="https://www.instagram.com/fbseb.ofc/" target="_blank" rel="noreferrer">
+              <small>Entidade esportiva</small>
+              <div>
+                <strong>FBSEB</strong>
+                <p>Card com visual consistente para destacar perfis que validam a força da marca.</p>
+              </div>
+              <span class="handle">@fbseb.ofc</span>
+            </a>
+
+            <a class="partner-card" href="https://www.instagram.com/federacaobahianadetenis/" target="_blank" rel="noreferrer">
+              <small>Tênis na Bahia</small>
+              <div>
+                <strong>Federação Bahiana de Tênis</strong>
+                <p>Área clicável com leitura rápida e foco em autoridade institucional.</p>
+              </div>
+              <span class="handle">@Federacaobahianadetenis</span>
+            </a>
+
+            <a class="partner-card" href="https://www.instagram.com/fed_badminton_bahia/" target="_blank" rel="noreferrer">
+              <small>Badminton</small>
+              <div>
+                <strong>Federação de Badminton da Bahia</strong>
+                <p>Mais movimento visual e uma apresentação mais profissional para as relações da marca.</p>
+              </div>
+              <span class="handle">@fed_badminton_bahia</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="destaques">
       <div class="container">
-        <span class="eyebrow">Destaques das redes sociais</span>
-        <h2 class="section-title">Vídeos em evidência para reforçar prova social, dinamismo e presença digital.</h2>
-        <p class="section-text">
-          Estruturei esta área para funcionar como uma vitrine dos melhores conteúdos em vídeo da Tennis Pro Bahia. Ela valoriza reels, bastidores e coberturas rápidas, ajudando a agência a transmitir movimento, relevância e autoridade visual logo na navegação principal.
-        </p>
+        <span class="eyebrow">Leitura rápida da marca</span>
+        <h2 class="section-title">Mais sofisticação, menos ruído e melhor experiência.</h2>
 
-        <div class="videos-grid">
-          <article class="video-card">
-            <div class="video-frame">
-              <span class="video-label">▶ Reel em destaque · Cobertura de evento</span>
-            </div>
-            <h3>Eventos que merecem ser vistos</h3>
-            <p>Espaço ideal para publicar vídeos curtos com ambientação, público, quadra, bastidores e momentos-chave que comprovam a qualidade da execução da agência.</p>
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <div class="highlight-icon">⚡</div>
+            <strong>Hero com mais impacto</strong>
+            <p>Entrada forte, com profundidade, movimento e contraste alinhados à identidade da Pro Sports.</p>
           </article>
 
-          <article class="video-card">
-            <div class="video-frame">
-              <span class="video-label">▶ Reel em destaque · Bastidores da produção</span>
-            </div>
-            <h3>Processo que transmite profissionalismo</h3>
-            <p>Use este bloco para mostrar montagem, organização, equipe em ação e preparação de estruturas, gerando percepção de método, cuidado e excelência.</p>
+          <article class="highlight-card">
+            <div class="highlight-icon">🧭</div>
+            <strong>Hierarquia mais clara</strong>
+            <p>Menos blocos longos e mais objetividade para o visitante entender rápido o valor da marca.</p>
           </article>
 
-          <article class="video-card">
-            <div class="video-frame">
-              <span class="video-label">▶ Reel em destaque · Resultado e impacto</span>
-            </div>
-            <h3>Conteúdo que gera confiança imediata</h3>
-            <p>Ideal para vídeos com atletas, depoimentos, público e momentos de celebração que reforcem a credibilidade da Tennis Pro Bahia perante parceiros e clientes.</p>
+          <article class="highlight-card">
+            <div class="highlight-icon">🤝</div>
+            <strong>Confiança em evidência</strong>
+            <p>A seção de parceiras cria prova social imediata e aumenta a sensação de profissionalismo.</p>
           </article>
-        </div>
-
-        <div class="quote">
-          <strong>Sugestão de uso desta seção</strong>
-          <p>
-            Para maximizar a percepção premium do site, os melhores reels devem ser selecionados com consistência visual, capas bem definidas e legendas curtas. Se você tiver os links oficiais do Instagram ou outra rede, esta área pode ser facilmente convertida em embeds reais dos vídeos publicados.
-          </p>
         </div>
       </div>
     </section>
 
     <section class="section" id="contato">
       <div class="container contact-grid">
-        <div class="contact-card">
+        <article class="contact-card">
           <span class="eyebrow">Contato</span>
-          <h2 class="section-title">Uma apresentação elegante para abrir boas conversas e novas parcerias.</h2>
+          <h2 class="section-title">Pronto para apresentar a Pro Sports com mais peso visual.</h2>
           <p>
-            O contato foi reorganizado para transmitir mais confiança e profissionalismo. Em vez de uma área simples, o site agora encerra a jornada com uma chamada comercial clara, pronta para reuniões, propostas e ativações de marca.
+            A nova página encerra a navegação com uma chamada comercial clara e uma estética mais compatível com o nível da marca.
           </p>
-          <div class="contact-actions" style="margin-top:28px;">
-            <a class="btn" href="mailto:tenisprobahia@gmail.com">tenisprobahia@gmail.com</a>
-            <a class="btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram da agência</a>
+          <div class="contact-actions" style="margin-top: 28px;">
+            <a class="btn" href="mailto:contato@prosports.com">contato@prosports.com</a>
+            <a class="btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
           </div>
-        </div>
+        </article>
 
-        <div class="contact-card">
-          <h3>Informações estratégicas</h3>
-          <span class="label">E-mail principal</span>
-          <span class="value">tenisprobahia@gmail.com</span>
+        <aside class="contact-card">
           <span class="label">Atuação</span>
-          <span class="value">Bahia · Projetos esportivos, eventos, branding e comunicação</span>
-          <span class="label">Posicionamento</span>
-          <span class="value">Agência de assessoria esportiva com foco em imagem, organização e resultado</span>
+          <span class="value">Assessoria esportiva, eventos e posicionamento de marca</span>
+          <span class="label">Estilo visual</span>
+          <span class="value">Base preta com degradê de cinza, profundidade 3D e contraste elegante</span>
           <ul class="contact-list">
-            <li>Ideal para apresentações institucionais e comerciais.</li>
-            <li>Layout preparado para transmitir sofisticação e clareza.</li>
-            <li>Estrutura pronta para receber links reais de redes e portfólio.</li>
+            <li>Experiência mais premium.</li>
+            <li>Conteúdo mais objetivo.</li>
+            <li>Parceiras em vitrine interativa.</li>
           </ul>
-        </div>
+        </aside>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Tennis Pro Bahia</strong><br />
-        Presença digital profissional para uma assessoria esportiva com visão de crescimento.
-      </div>
+    <div class="container footer-bar">
+      <div><strong>Pro Sports</strong><br />Assessoria esportiva com presença mais elegante e profissional.</div>
       <div>© 2026 · Site institucional</div>
     </div>
   </footer>
